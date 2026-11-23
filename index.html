@@ -1,0 +1,1536 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7048c8">
+<title>ConSentido | Responsabilidad Sexual</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --purple: #7048c8;
+    --dark: #292044;
+    --pink: #ff7895;
+    --orange: #ffae68;
+    --teal: #35c5b0;
+    --light: #f8f6ff;
+    --white: #ffffff;
+    --text: #514c63;
+    --shadow: 0 15px 45px rgba(60,40,100,.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+h1,h2,h3 {
+    font-family: 'Outfit', sans-serif;
+}
+
+button,a {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+/* NAVBAR */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 20px #2920440c;
+}
+
+.navbar {
+    max-width: 1200px;
+    height: 76px;
+    margin: auto;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Outfit';
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--purple);
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+.nav-links {
+    display: flex;
+    gap: 27px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--purple);
+}
+
+.nav-button {
+    background: var(--purple);
+    color: white !important;
+    padding: 12px 19px;
+    border-radius: 30px;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 26px;
+    color: var(--purple);
+    background: none;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 720px;
+    padding: 145px 25px 90px;
+    background:
+    radial-gradient(circle at 90% 20%, #ff78952c, transparent 27%),
+    radial-gradient(circle at 10% 90%, #35c5b025, transparent 30%),
+    linear-gradient(135deg,#f9f5ff,#fff4f4);
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1150px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.tag {
+    display: inline-block;
+    background: #7048c81a;
+    color: var(--purple);
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(48px,6vw,76px);
+    line-height: 1.04;
+    letter-spacing: -3px;
+    margin-bottom: 23px;
+}
+
+.hero h1 span {
+    color: var(--purple);
+}
+
+.hero p {
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+.btn-primary {
+    color: white;
+    background: var(--purple);
+    box-shadow: 0 10px 25px #7048c844;
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--purple);
+    border: 1px solid #7048c833;
+}
+
+.hero-art {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.hero-circle {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#b59aff,#ff9db4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 145px;
+    box-shadow: 0 25px 65px #7048c833;
+    animation: floating 4s ease-in-out infinite;
+}
+
+.float-card {
+    position: absolute;
+    background: white;
+    padding: 17px 21px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.card-one {
+    top: 40px;
+    left: 0;
+}
+
+.card-two {
+    bottom: 45px;
+    right: 0;
+}
+
+@keyframes floating {
+    0%,100% {transform: translateY(0)}
+    50% {transform: translateY(-17px)}
+}
+
+/* GENERAL */
+
+section {
+    padding: 90px 25px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.section-heading small {
+    color: var(--purple);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    font-size: clamp(32px,4vw,45px);
+    margin: 14px 0;
+}
+
+.section-heading p {
+    color: var(--text);
+    line-height: 1.8;
+}
+
+/* INTRO */
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.intro-card {
+    padding: 30px;
+    background: white;
+    border-radius: 23px;
+    box-shadow: var(--shadow);
+    transition: .3s;
+}
+
+.intro-card:hover {
+    transform: translateY(-8px);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.purple {background:#eee7ff}
+.pink {background:#ffe6ed}
+.green {background:#ddf8f1}
+
+.intro-card h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.intro-card p {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+/* EDUCATION */
+
+.education {
+    background: white;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 23px;
+}
+
+.education-card {
+    padding: 32px;
+    border-radius: 25px;
+    background: var(--light);
+    border: 1px solid #7048c812;
+}
+
+.education-card .emoji {
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+.education-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.education-card p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.more-info {
+    margin-top: 17px;
+    color: var(--purple);
+    font-weight: 800;
+    background: none;
+    font-size: 13px;
+}
+
+.extra {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 13px;
+    background: white;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.extra.show {
+    display: block;
+    animation: appear .3s ease;
+}
+
+/* BANNER */
+
+.banner {
+    background: linear-gradient(120deg,#7048c8,#a16bdb,#f27f9f);
+    color: white;
+    border-radius: 30px;
+    padding: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.banner h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.banner p {
+    line-height: 1.8;
+    opacity: .9;
+    max-width: 650px;
+}
+
+.banner .btn {
+    background: white;
+    color: var(--purple);
+    white-space: nowrap;
+}
+
+/* PROMOTORES */
+
+.promotores {
+    background: #f1edff;
+}
+
+.promotor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.promotor-art {
+    background: linear-gradient(135deg,#ffb0bd,#b7a0ff);
+    min-height: 330px;
+    border-radius: 30px;
+    display: grid;
+    place-items: center;
+    font-size: 115px;
+}
+
+.promotor-content h2 {
+    font-size: 39px;
+    margin-bottom: 18px;
+}
+
+.promotor-content p {
+    color: var(--text);
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.check {
+    margin: 13px 0;
+    font-weight: 700;
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* TEST */
+
+.quiz {
+    background: white;
+}
+
+.quiz-box {
+    max-width: 720px;
+    margin: auto;
+    background: #f8f6ff;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: var(--shadow);
+}
+
+.progress {
+    height: 9px;
+    background: #e3dcf5;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: var(--purple);
+    transition: .4s;
+}
+
+.quiz-box h3 {
+    font-size: 23px;
+    margin-bottom: 23px;
+}
+
+.answers {
+    display: grid;
+    gap: 12px;
+}
+
+.answer {
+    text-align: left;
+    padding: 16px;
+    border-radius: 13px;
+    background: white;
+    border: 2px solid transparent;
+    font-size: 14px;
+    color: var(--dark);
+    transition: .2s;
+}
+
+.answer:hover {
+    border-color: var(--purple);
+}
+
+.answer.correct {
+    background: #d9f8e9;
+    border-color: #32bd80;
+}
+
+.answer.wrong {
+    background: #ffe1e8;
+    border-color: #f27f9f;
+}
+
+.quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.quiz-result {
+    text-align: center;
+    display: none;
+}
+
+.quiz-result strong {
+    display: block;
+    font-size: 55px;
+    color: var(--purple);
+    margin: 15px;
+}
+
+/* FAQ */
+
+.faq-list {
+    max-width: 800px;
+    margin: auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 13px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #29204409;
+}
+
+.faq-question {
+    width: 100%;
+    background: white;
+    padding: 22px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 22px 22px;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-question span {
+    transform: rotate(45deg);
+}
+
+/* CONTACT */
+
+.contact {
+    background: linear-gradient(135deg,#f1eaff,#fff0f3);
+}
+
+.contact-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+}
+
+.contact-box h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.contact-box > p {
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e7e0f1;
+    background: #fcfbff;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--purple);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.privacy {
+    font-size: 12px;
+    color: #777184;
+    line-height: 1.7;
+    margin: 17px 0;
+}
+
+.success-message {
+    display: none;
+    padding: 15px;
+    background: #ddf8ed;
+    color: #167a54;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #292044;
+    color: white;
+    padding: 55px 25px 25px;
+}
+
+.footer-container {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+footer .logo {
+    color: white;
+}
+
+footer p {
+    color: #c5bfd7;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 350px;
+    margin-top: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    font-size: 13px;
+    color: #ded8ed;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #ffffff20;
+    margin-top: 35px;
+    padding-top: 22px;
+    color: #b9b1ca;
+    font-size: 12px;
+}
+
+/* FLOAT BUTTON */
+
+.top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--purple);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 22px;
+    display: none;
+    z-index: 500;
+    box-shadow: var(--shadow);
+}
+
+/* ANIMATIONS */
+
+@keyframes appear {
+    from {opacity:0; transform:translateY(10px)}
+    to {opacity:1; transform:translateY(0)}
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: .7s;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+    .menu-btn {display:block}
+
+    .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px;
+        flex-direction: column;
+        display: none;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.active {display:flex}
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero p {margin: 0 auto 25px}
+    .hero-buttons {justify-content:center}
+    .hero-art {min-height: 330px}
+    .hero-circle {width:270px;height:270px;font-size:110px}
+
+    .intro-grid {grid-template-columns: 1fr 1fr}
+    .promotor-grid {grid-template-columns:1fr}
+    .promotor-content {text-align:center}
+    .banner {flex-direction:column;text-align:center}
+}
+
+@media(max-width:550px) {
+    .hero {padding-top:125px}
+    .hero h1 {letter-spacing:-2px}
+    .intro-grid,.education-grid {grid-template-columns:1fr}
+    .banner {padding:35px 23px}
+    .banner h2 {font-size:27px}
+    .promotor-content h2 {font-size:31px}
+    section {padding:70px 18px}
+    .quiz-box,.contact-box {padding:23px}
+    .card-one {left:-5px}
+    .card-two {right:-5px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+    <a href="#inicio" class="logo">Con<span>Sentido.</span></a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#educacion">Educación</a>
+        <a href="#promotores">Promotores</a>
+        <a href="#quiz">Test</a>
+        <a href="#contacto" class="nav-button">Orientación</a>
+    </div>
+</nav>
+</header>
+
+<!-- INICIO -->
+
+<section class="hero" id="inicio">
+<div class="hero-container">
+
+    <div>
+        <span class="tag">DE LA IDEA AL NEGOCIO</span>
+
+        <h1>Decidir con<br><span>ConSentido.</span></h1>
+
+        <p>
+            Un espacio de orientación confidencial en salud sexual
+            y una Red de Promotores Pares
+            <strong>“Hablemos claro”</strong>.
+            Infórmate, aprende y toma decisiones responsables
+            sobre tu bienestar.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#educacion" class="btn btn-primary">
+                Explorar información →
+            </a>
+
+            <a href="#contacto" class="btn btn-secondary">
+                Solicitar orientación
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-art">
+        <div class="hero-circle">💜</div>
+        <div class="float-card card-one">Educación sin prejuicios</div>
+        <div class="float-card card-two">Hablemos claro</div>
+    </div>
+
+</div>
+</section>
+
+<!-- NOSOTROS -->
+
+<section id="nosotros">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <small>¿Quiénes somos?</small>
+        <h2>La información también es una forma de cuidarnos.</h2>
+        <p>
+            ConSentido es una propuesta educativa orientada a
+            promover la responsabilidad sexual mediante información,
+            prevención, comunicación y acompañamiento.
+        </p>
+    </div>
+
+    <div class="intro-grid">
+
+        <div class="intro-card reveal">
+            <div class="icon purple">🎯</div>
+            <h3>Nuestra misión</h3>
+            <p>
+                Facilitar el acceso a información clara y confiable
+                para fomentar decisiones responsables y conscientes
+                sobre la salud sexual.
+            </p>
+        </div>
+
+        <div class="intro-card reveal">
+            <div class="icon pink">💡</div>
+            <h3>Nuestra visión</h3>
+            <p>
+                Construir una comunidad informada, respetuosa,
+                libre de prejuicios y comprometida con el bienestar
+                de las personas.
+            </p>
+        </div>
+
+        <div class="intro-card reveal">
+            <div class="icon green">🤝</div>
+            <h3>Nuestros valores</h3>
+            <p>
+                Respeto, responsabilidad, empatía, confidencialidad,
+                igualdad, prevención y libertad para decidir
+                sin presiones.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- EDUCACIÓN -->
+
+<section class="education" id="educacion">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <small>Aprende con nosotros</small>
+        <h2>Educación sexual responsable</h2>
+        <p>
+            Conocer nuestro cuerpo, nuestros derechos y las
+            medidas de prevención nos ayuda a tomar decisiones informadas.
+        </p>
+    </div>
+
+    <div class="education-grid">
+
+        <div class="education-card reveal">
+            <div class="emoji">❤️</div>
+            <h3>Responsabilidad sexual</h3>
+            <p>
+                Implica tomar decisiones conscientes, respetar los
+                límites personales y reconocer que toda relación
+                debe basarse en el respeto y el consentimiento.
+            </p>
+            <button class="more-info" onclick="toggleInfo(0)">
+                Conocer más +
+            </button>
+            <div class="extra" id="extra0">
+                La responsabilidad sexual también significa
+                comunicarse abiertamente, evitar presiones,
+                asumir las consecuencias de nuestras decisiones
+                y buscar información confiable.
+            </div>
+        </div>
+
+        <div class="education-card reveal">
+            <div class="emoji">🛡️</div>
+            <h3>Prevención de ITS</h3>
+            <p>
+                Las infecciones de transmisión sexual pueden afectar
+                la salud. La información, las pruebas y las medidas
+                de prevención son fundamentales.
+            </p>
+            <button class="more-info" onclick="toggleInfo(1)">
+                Conocer más +
+            </button>
+            <div class="extra" id="extra1">
+                El uso correcto del preservativo reduce el riesgo
+                de muchas ITS, aunque no elimina todos los riesgos.
+                También son importantes las pruebas, la vacunación
+                contra el VPH y la hepatitis B, y la atención sanitaria.
+            </div>
+        </div>
+
+        <div class="education-card reveal">
+            <div class="emoji">🌸</div>
+            <h3>Anticoncepción</h3>
+            <p>
+                Existen diferentes métodos anticonceptivos que
+                ayudan a prevenir embarazos. Cada uno tiene
+                características y niveles de eficacia distintos.
+            </p>
+            <button class="more-info" onclick="toggleInfo(2)">
+                Conocer más +
+            </button>
+            <div class="extra" id="extra2">
+                Entre ellos se encuentran el preservativo,
+                las pastillas anticonceptivas, los implantes,
+                las inyecciones y los dispositivos intrauterinos.
+                Un profesional de salud puede orientar sobre
+                cuál es el más adecuado.
+            </div>
+        </div>
+
+        <div class="education-card reveal">
+            <div class="emoji"></div>
+            <h3>Consentimiento y respeto</h3>
+            <p>
+                Toda decisión relacionada con la intimidad debe
+                ser libre, voluntaria y respetada. Nadie debe
+                sentirse obligado o presionado.
+            </p>
+            <button class="more-info" onclick="toggleInfo(3)">
+                Conocer más +
+            </button>
+            <div class="extra" id="extra3">
+                El consentimiento debe ser claro y puede
+                retirarse en cualquier momento. El silencio,
+                el miedo o la presión no significan consentimiento.
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- BANNER -->
+
+<section>
+<div class="container">
+    <div class="banner reveal">
+        <div>
+            <h2>¡Hablemos claro!</h2>
+            <p>
+                Preguntar no debería dar vergüenza.
+                Aprender sobre salud sexual es un derecho y
+                contar con información confiable puede marcar
+                una gran diferencia.
+            </p>
+        </div>
+
+        <a href="#quiz" class="btn">Poner a prueba mis conocimientos →</a>
+    </div>
+</div>
+</section>
+
+<!-- PROMOTORES -->
+
+<section class="promotores" id="promotores">
+<div class="container">
+
+    <div class="promotor-grid">
+
+        <div class="promotor-art reveal">
+            🧑‍🤝‍🧑
+        </div>
+
+        <div class="promotor-content reveal">
+            <span class="tag">RED DE APOYO</span>
+
+            <h2>Promotores Pares: Hablemos claro</h2>
+
+            <p>
+                Una iniciativa que busca involucrar a jóvenes
+                como agentes de información y sensibilización
+                dentro de sus comunidades.
+            </p>
+
+            <div class="check">✓ Compartir información confiable.</div>
+            <div class="check">✓ Promover el respeto y la empatía.</div>
+            <div class="check">✓ Combatir mitos y desinformación.</div>
+            <div class="check">✓ Orientar hacia servicios profesionales.</div>
+
+            <a href="#contacto" class="btn btn-primary" style="margin-top:20px">
+                Conocer la iniciativa →
+            </a>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- TEST INTERACTIVO -->
+
+<section class="quiz" id="quiz">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <small>Aprende jugando</small>
+        <h2>¿Cuánto sabes sobre responsabilidad sexual?</h2>
+        <p>
+            Responde estas preguntas y descubre cuánto conoces
+            sobre prevención, respeto y salud sexual.
+        </p>
+    </div>
+
+    <div class="quiz-box reveal">
+
+        <div id="quizContent">
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <p id="questionNumber" style="color:#7048c8;font-weight:800;font-size:13px;margin-bottom:15px">
+                PREGUNTA 1 DE 5
+            </p>
+
+            <h3 id="question">¿Qué significa responsabilidad sexual?</h3>
+
+            <div class="answers" id="answers"></div>
+
+            <div class="quiz-footer">
+                <span id="feedback" style="font-size:13px;color:#7048c8"></span>
+                <button class="btn btn-primary" id="nextBtn" disabled>
+                    Siguiente →
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-result" id="quizResult">
+            <div style="font-size:65px">🎉</div>
+            <h2>¡Test completado!</h2>
+            <strong id="score">0/5</strong>
+            <p id="resultText" style="color:#514c63;line-height:1.8"></p>
+            <button class="btn btn-primary" onclick="restartQuiz()" style="margin-top:20px">
+                Volver a jugar
+            </button>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PREGUNTAS FRECUENTES -->
+
+<section id="faq">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <small>Resolvemos tus dudas</small>
+        <h2>Preguntas frecuentes</h2>
+        <p>Información sencilla para preguntas importantes.</p>
+    </div>
+
+    <div class="faq-list">
+
+        <div class="faq-item">
+            <button class="faq-question">
+                ¿Qué es la responsabilidad sexual?
+                <span>＋</span>
+            </button>
+            <div class="faq-answer">
+                Es la capacidad de tomar decisiones informadas,
+                libres y respetuosas relacionadas con la sexualidad,
+                considerando el bienestar propio y de otras personas.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                ¿Los preservativos ayudan a prevenir las ITS?
+                <span>＋</span>
+            </button>
+            <div class="faq-answer">
+                Sí. Su uso correcto y constante reduce el riesgo
+                de muchas infecciones de transmisión sexual,
+                aunque no ofrece protección absoluta frente a todas.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                ¿Dónde puedo recibir orientación?
+                <span>＋</span>
+            </button>
+            <div class="faq-answer">
+                Puedes acudir a un establecimiento de salud,
+                solicitar orientación de profesionales sanitarios
+                o consultar servicios oficiales de salud sexual.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                ¿Por qué es importante el consentimiento?
+                <span>＋</span>
+            </button>
+            <div class="faq-answer">
+                Porque garantiza que las decisiones sean libres
+                y voluntarias. Todas las personas tienen derecho
+                a establecer límites que deben ser respetados.
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contact" id="contacto">
+<div class="container">
+
+    <div class="section-heading reveal">
+        <small>Estamos para orientarte</small>
+        <h2>Un espacio para hablar sin prejuicios.</h2>
+        <p>
+            Escribe tu consulta o selecciona el tema que te interesa.
+            Este formulario es una demostración y no envía información
+            a ningún servicio de salud.
+        </p>
+    </div>
+
+    <div class="contact-box reveal">
+
+        <h3>Solicitar orientación 💜</h3>
+
+        <p>
+            Puedes explorar los temas disponibles y practicar
+            cómo formular una consulta.
+        </p>
+
+        <form id="contactForm">
+
+            <div class="form-group">
+                <label>Nombre o seudónimo</label>
+                <input type="text" id="name" placeholder="¿Cómo deseas que te llamemos?" required>
+            </div>
+
+            <div class="form-group">
+                <label>¿Sobre qué tema deseas informarte?</label>
+                <select id="topic" required>
+                    <option value="">Selecciona un tema</option>
+                    <option>Responsabilidad sexual</option>
+                    <option>Métodos anticonceptivos</option>
+                    <option>Prevención de ITS</option>
+                    <option>Consentimiento y respeto</option>
+                    <option>Orientación general</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Tu consulta</label>
+                <textarea id="message" placeholder="Escribe tu pregunta..." required></textarea>
+            </div>
+
+            <div class="privacy">
+                🔒 Aviso de privacidad: esta demostración funciona
+                únicamente en tu navegador. No almacena ni transmite
+                tus datos. Para una orientación sanitaria real,
+                acude a un servicio de salud autorizado.
+            </div>
+
+            <button class="btn btn-primary" type="submit" style="width:100%">
+                Enviar consulta de demostración →
+            </button>
+
+            <div class="success-message" id="successMessage">
+                ✓ Consulta de demostración completada.
+                Tus datos no fueron enviados ni almacenados.
+            </div>
+
+        </form>
+
+    </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+<div class="footer-container">
+
+    <div>
+        <div class="logo">Con<span>Sentido.</span></div>
+        <p>
+            Educación, orientación y responsabilidad sexual.
+            Construyendo una comunidad informada mediante
+            el respeto y la prevención.
+        </p>
+    </div>
+
+    <div class="footer-links">
+        <strong>Explorar</strong>
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#educacion">Educación sexual</a>
+        <a href="#promotores">Promotores pares</a>
+    </div>
+
+    <div class="footer-links">
+        <strong>Participa</strong>
+        <a href="#quiz">Test interactivo</a>
+        <a href="#faq">Preguntas frecuentes</a>
+        <a href="#contacto">Orientación</a>
+    </div>
+
+</div>
+
+<div class="copyright">
+    © 2026 ConSentido. Proyecto educativo: Responsabilidad sexual.
+    <br>Información para aprender, prevenir y decidir con responsabilidad.
+</div>
+</footer>
+
+<button class="top-btn" id="topBtn" aria-label="Volver arriba">↑</button>
+
+<script>
+
+// MENÚ RESPONSIVE
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+// INFORMACIÓN DESPLEGABLE
+
+function toggleInfo(id) {
+    const element = document.getElementById('extra' + id);
+    element.classList.toggle('show');
+}
+
+// ANIMACIONES AL DESPLAZARSE
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {threshold: 0.12});
+
+document.querySelectorAll('.reveal').forEach(element => {
+    observer.observe(element);
+});
+
+// BOTÓN VOLVER ARRIBA
+
+const topBtn = document.getElementById('topBtn');
+
+window.addEventListener('scroll', () => {
+    topBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+
+topBtn.addEventListener('click', () => {
+    window.scrollTo({top:0,behavior:'smooth'});
+});
+
+// PREGUNTAS FRECUENTES
+
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+    });
+});
+
+// TEST INTERACTIVO
+
+const questions = [
+    {
+        q: "¿Qué significa responsabilidad sexual?",
+        a: [
+            "Tomar decisiones informadas y respetuosas.",
+            "Hacer lo que otras personas decidan.",
+            "Evitar hablar sobre sexualidad."
+        ],
+        correct: 0,
+        explanation: "La responsabilidad sexual implica decisiones libres, informadas y respetuosas."
+    },
+    {
+        q: "¿Qué es el consentimiento?",
+        a: [
+            "Aceptar por presión.",
+            "Una decisión libre y voluntaria.",
+            "No expresar ninguna opinión."
+        ],
+        correct: 1,
+        explanation: "El consentimiento debe ser libre, claro y puede retirarse en cualquier momento."
+    },
+    {
+        q: "¿Qué ayuda a reducir el riesgo de ITS?",
+        a: [
+            "Ignorar los síntomas.",
+            "Compartir información sin verificar.",
+            "Usar correctamente el preservativo y realizarse pruebas."
+        ],
+        correct: 2,
+        explanation: "La prevención incluye preservativos, pruebas y orientación sanitaria."
+    },
+    {
+        q: "¿Qué debemos hacer ante una duda sobre anticoncepción?",
+        a: [
+            "Buscar información confiable y orientación profesional.",
+            "Guiarnos únicamente por rumores.",
+            "Evitar preguntar."
+        ],
+        correct: 0,
+        explanation: "Un profesional sanitario puede orientar sobre las diferentes alternativas."
+    },
+    {
+        q: "¿Qué debemos hacer si alguien establece un límite?",
+        a: [
+            "Ignorarlo.",
+            "Respetarlo.",
+            "Insistir hasta cambiar su opinión."
+        ],
+        correct: 1,
+        explanation: "Respetar los límites personales es fundamental en cualquier relación."
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+const questionEl = document.getElementById('question');
+const answersEl = document.getElementById('answers');
+const nextBtn = document.getElementById('nextBtn');
+const feedback = document.getElementById('feedback');
+const progressBar = document.getElementById('progressBar');
+
+function loadQuestion() {
+
+    answered = false;
+
+    const q = questions[currentQuestion];
+
+    document.getElementById('questionNumber').textContent =
+        `PREGUNTA ${currentQuestion + 1} DE ${questions.length}`;
+
+    questionEl.textContent = q.q;
+    answersEl.innerHTML = '';
+    feedback.textContent = '';
+
+    progressBar.style.width =
+        (currentQuestion / questions.length * 100) + '%';
+
+    q.a.forEach((answer,index) => {
+
+        const button = document.createElement('button');
+
+        button.className = 'answer';
+        button.textContent = answer;
+
+        button.addEventListener('click', () => selectAnswer(index,button));
+
+        answersEl.appendChild(button);
+    });
+
+    nextBtn.disabled = true;
+    nextBtn.style.opacity = '.5';
+}
+
+function selectAnswer(index,button) {
+
+    if(answered) return;
+
+    answered = true;
+
+    const q = questions[currentQuestion];
+    const allButtons = document.querySelectorAll('.answer');
+
+    allButtons.forEach(b => b.disabled = true);
+
+    if(index === q.correct) {
+        score++;
+        button.classList.add('correct');
+        feedback.textContent = '¡Correcto! ✓';
+    } else {
+        button.classList.add('wrong');
+        allButtons[q.correct].classList.add('correct');
+        feedback.textContent = 'Revisa la respuesta correcta.';
+    }
+
+    feedback.textContent += ' ' + q.explanation;
+
+    nextBtn.disabled = false;
+    nextBtn.style.opacity = '1';
+    nextBtn.textContent =
+        currentQuestion === questions.length - 1 ? 'Ver resultado →' : 'Siguiente →';
+}
+
+nextBtn.addEventListener('click', () => {
+
+    if(!answered) return;
+
+    currentQuestion++;
+
+    if(currentQuestion < questions.length) {
+        loadQuestion();
+    } else {
+        showResult();
+    }
+});
+
+function showResult() {
+
+    document.getElementById('quizContent').style.display = 'none';
+
+    const result = document.getElementById('quizResult');
+    result.style.display = 'block';
+
+    document.getElementById('score').textContent =
+        score + '/' + questions.length;
+
+    let message = '';
+
+    if(score === 5) {
+        message = '¡Excelente! Tienes conocimientos muy sólidos sobre estos temas.';
+    } else if(score >= 3) {
+        message = '¡Buen trabajo! Sigue aprendiendo y reforzando tus conocimientos.';
+    } else {
+        message = '¡Este es el comienzo! Explora nuestras secciones educativas para aprender más.';
+    }
+
+    document.getElementById('resultText').textContent = message;
+
+    progressBar.style.width = '100%';
+}
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.getElementById('quizContent').style.display = 'block';
+    document.getElementById('quizResult').style.display = 'none';
+
+    loadQuestion();
+}
+
+// FORMULARIO DEMOSTRATIVO
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+
+    e.preventDefault();
+
+    document.getElementById('successMessage').style.display = 'block';
+
+    this.reset();
+
+});
+
+// INICIAR
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
